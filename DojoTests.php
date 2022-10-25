@@ -8,16 +8,18 @@ use function PHPUnit\Framework\assertTrue;
 
 require_once 'dojo_code.php';
 
-final class DojoTests extends TestCase {
+final class DojoTests extends TestCase
+{
 
     /**
      * @dataProvider handsWithAPair
      */
-    public function testHasAPairTrue(array $hand) {
+    public function testHasAPairTrue(array $hand)
+    {
         assertTrue(hasAPair($hand));
     }
 
-    public function handsWithAPair() : array
+    public function handsWithAPair(): array
     {
         return [
             [[2, 2]],
@@ -33,11 +35,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithoutAPair
      */
-    public function testHasAPairFalse(array $hand) {
+    public function testHasAPairFalse(array $hand)
+    {
         assertFalse(hasAPair($hand));
     }
 
-    public function handsWithoutAPair() : array
+    public function handsWithoutAPair(): array
     {
         return [
             [[2, 3]],
@@ -54,11 +57,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithThreeOfAKind
      */
-    public function testHasThreeOfAKind(array $hand) {
+    public function testHasThreeOfAKind(array $hand)
+    {
         assertTrue(hasThreeOfAKind($hand));
     }
 
-    public function handsWithThreeOfAKind() : array
+    public function handsWithThreeOfAKind(): array
     {
         return [
             [[2, 2, 2]],
@@ -74,11 +78,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithoutThreeOfAKind
      */
-    public function testHasThreeOfAKindFalse(array $hand) {
+    public function testHasThreeOfAKindFalse(array $hand)
+    {
         assertFalse(hasThreeOfAKind($hand));
     }
 
-    public function handsWithoutThreeOfAKind() : array
+    public function handsWithoutThreeOfAKind(): array
     {
         return [
             [[2, 3]],
@@ -95,11 +100,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithASquare
      */
-    public function testHasASquareTrue(array $hand) {
+    public function testHasASquareTrue(array $hand)
+    {
         assertTrue(hasASquare($hand));
     }
 
-    public function handsWithASquare() : array
+    public function handsWithASquare(): array
     {
         return [
             [[2, 2, 2, 2]],
@@ -115,11 +121,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithoutASquare
      */
-    public function testHasASquareFalse(array $hand) {
+    public function testHasASquareFalse(array $hand)
+    {
         assertFalse(hasASquare($hand));
     }
 
-    public function handsWithoutASquare() : array
+    public function handsWithoutASquare(): array
     {
         return [
             [[2, 3]],
@@ -136,11 +143,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithAFull
      */
-    public function testHasAFullTrue(array $hand) {
+    public function testHasAFullTrue(array $hand)
+    {
         assertTrue(hasAFull($hand));
     }
 
-    public function handsWithAFull() : array
+    public function handsWithAFull(): array
     {
         return [
             [[2, 2, 3, 3, 3]],
@@ -154,11 +162,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithoutAFull
      */
-    public function testHasAFullFalse(array $hand) {
+    public function testHasAFullFalse(array $hand)
+    {
         assertFalse(hasAFull($hand));
     }
 
-    public function handsWithoutAFull() : array
+    public function handsWithoutAFull(): array
     {
         return [
             [[2, 3]],
@@ -175,11 +184,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithAStraight
      */
-    public function testHasAStraightTrue(array $hand) {
+    public function testHasAStraightTrue(array $hand)
+    {
         assertTrue(hasAStraight($hand));
     }
 
-    public function handsWithAStraight() : array
+    public function handsWithAStraight(): array
     {
         return [
             [[2, 3, 4, 5, 6]],
@@ -193,11 +203,12 @@ final class DojoTests extends TestCase {
     /**
      * @dataProvider handsWithoutAFull
      */
-    public function testHasAStraightFalse(array $hand) {
+    public function testHasAStraightFalse(array $hand)
+    {
         assertFalse(hasAStraight($hand));
     }
 
-    public function handsWithoutAStraight() : array
+    public function handsWithoutAStraight(): array
     {
         return [
             [[2, 3]],
